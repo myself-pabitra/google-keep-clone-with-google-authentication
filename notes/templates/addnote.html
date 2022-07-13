@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block addnote %}
+<!-- <body style="background: linear-gradient(45deg, red, blue);"> -->
+<body>
+<div class="container adding" >
+    <h4 class="head">KeepNotes</h4>
+    <form action="" method="post">
+    {%csrf_token%}
+            <div class="form-group">
+                 <input type="text" placeholder="Enter title" name="title" value="{{ objects.title}}" class="titlename rounded border border-none">
+            </div>
+            <div class="form-group">
+                <textarea  style="width:480px; height:170px;" type="text" class="notename rounded border border-none textformat" placeholder="Write your notes Here"
+                       name="note" autofocus >{{ objects.note}}</textarea>
+             </div>
+        <div class="form-group">
+    <button type="submit" class="btn btn-success addbtn">Add</button>
+        </div>
+</form>
+</div>
+</body>
+{%endblock %}

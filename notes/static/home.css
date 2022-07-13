@@ -1,0 +1,57 @@
+body{
+    background-color:rgb(19, 18, 18);
+}
+.transparent{
+   /*opacity: 0.5*/
+    /*background: transparent;*/
+    /*background-color: rgba(245, 245, 245, 0.4);*/
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+}
+.cont{
+    width: 30%;
+    margin-left: 32rem;
+    margin-top: 0.5rem;
+}
+.my-container{
+    width: auto;
+    padding: 23px;
+    margin: 29px auto;
+    columns: 4;
+    column-gap: 21px;
+}
+.my-box{
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 19px;
+    background: transparent;
+    overflow: hidden;
+    break-inside: avoid;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 /6%), 0 2px 5px 0 rgb(0 0 0 /20%);
+    border-radius: 0.5rem;
+    border: .3px solid black;
+
+}
+h4{
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 20px;
+}
+h4{
+    margin: 0;
+    padding: 0 0 10px;
+    font-size: 16px;
+}
+.edit_icon{
+margin-left: 5.5rem;
+    color: #1b1b1b;
+}
+.delete_icon{
+    margin-left: 4.5rem;
+    color: #1b1b1b;
+}
+.my-Search{
+    margin-top: 2rem;
+    margin-left: 28%;
+}

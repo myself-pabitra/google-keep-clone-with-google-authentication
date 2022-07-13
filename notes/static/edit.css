@@ -1,0 +1,17 @@
+.notename{
+    margin-left: 4rem;
+    width: 30rem;
+    height: 7.7rem;
+}
+.title{
+    text-align: center;
+    font-size: xxx-large;
+    padding-top: 1rem;
+}
+.textformat{
+     text-align: left;
+    padding-bottom: 6rem;
+}
+body{
+    background-color: gray;
+}

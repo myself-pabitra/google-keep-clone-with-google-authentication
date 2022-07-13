@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{%block delete%}
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLongTitle">Are you Sure You want to delete this note <span class="text-warning ml-2">{{ del_note.title }}</span> ?  </h6>
+        <a href="{% url 'home' %}" type="button" class="close"  aria-label="Close">
+          <span   aria-hidden="true">&times;</span>
+        </a>
+      </div>
+      <div class="modal-body">
+          {{ del_note.note}}
+      </div>
+
+        <form method="POST" action="">
+             {% csrf_token %}
+          <div class="modal-footer">
+            <a href="{% url 'home' %}" type="button" class="btn btn-secondary" >Cancel</a>
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+{%endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function () {
+    $("#exampleModalCenter").modal("show");
+  });
+</script>
+{% endblock %}

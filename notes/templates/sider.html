@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand far fa-sticky-note text-white" href="{% url 'home' %}">KeepNotes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="iconadd">
+    <a class="fas fa-plus-circle fa-3x text-light" href="{% url 'addnote' %}"></a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      {% if user.is_authenticated %}
+
+        {% if username %}
+          <li class="nav-item active">
+            <i class="text-light px-3 " href=""> <span class="welcome_text">  Welcome {{username}} </span></i>
+          </li>
+        {% endif %}
+
+        <li class="nav-item active">
+          <a class="nav-link fas fa-home text-light px-3 " href="{%url 'home' %}">Home</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link far fa-calendar-plus text-light px-3 " href="{%url 'addnote' %}">Take note</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link fas fa-sign-out-alt text-light px-3" href="http://127.0.0.1:8000/admin/">Admin Login</a>
+        </li>
+
+      <li class="nav-item active">
+        <a class="nav-link fas fa-sign-out-alt text-light px-3 " href="{%url 'logout' %}">Log out</a>
+      </li>
+
+  {% else %}
+    <li class="nav-item active">
+      <a class="nav-link fas fa-sign-out-alt text-light px-3 " href="{%url 'register' %}">Register</a>
+    </li>
+
+    <li class="nav-item active">
+      <a class="nav-link fas fa-sign-out-alt text-light px-3 " href="{%url 'login' %}">Login</a>
+    </li>
+    {% endif %}
+   
+     
+    </ul>
+  </div>
+</nav>
+<!-- ======================================================================================================================================== -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand far fa-sticky-note text-white" href="{% url 'home'%}"> KeepNotes</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="iconadd">
+    <a class="fas fa-plus-circle fa-3x text-light" href="{% url 'addnote' %}"></a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      
+                       <!------------------ navbar search ----------------------->
+<!--      <li>-->
+<!--        <form class="form-inline" action="search" method="POST">-->
+<!--          {% csrf_token %}-->
+<!--          <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">-->
+
+<!--          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="search">Search</button>-->
+<!--        </form>-->
+<!--      </li>-->
+                      <!--------------- end of search ------------------>
+
+      <!-- <li class="nav-item active">
+        <a class="nav-link fas fa-home text-light px-3 " href="{%url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link far fa-calendar-plus text-light px-3 " href="{%url 'addnote' %}">Take note</a>
+      </li>
+
+      {% if user.is_authenticated %}
+        {% if username %}
+          <li class="nav-item active">
+            <i class="text-light px-3 " href="">Welcome {{username}}</i>
+          </li>
+        {% endif %}
+      <li class="nav-item active">
+        <a class="nav-link fas fa-sign-out-alt text-light px-3 " href="{%url 'logout' %}">Log out</a>
+      </li>
+    {% else %}
+      <li class="nav-item active">
+        <a class="nav-link fas fa-sign-out-alt text-light px-3 " href="{%url 'register' %}">Register</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link fas fa-sign-out-alt text-light px-3 " href="{%url 'login' %}">Login</a>
+      </li>
+      {% endif %}
+      <li class="nav-item active">
+        <a class="nav-link fas fa-sign-out-alt text-light px-3" href="http://127.0.0.1:8000/admin/">Admin Login</a>
+      </li>
+    </ul>
+  </div> -->
+</nav>
+</body>
+</html>

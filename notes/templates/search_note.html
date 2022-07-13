@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{% block search %}
+ <!---------------------------In page search--------------------------->
+        <div class="my-Search">
+             <form class="form-inline" action="search" method="POST">
+                  {% csrf_token %}
+                  <input class="form-control col-lg-6 mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+
+                  <button class="btn btn-warning my-2 my-sm-0" type="submit" value="search">Search</button>
+                </form>
+        </div>
+                <!---------------------------In page search End--------------------------->
+
+
+<div class="my-container">
+    {% for result in search_result %}
+      <!-- <div class="card d-inline-flex .align-self-start shadow p-1 mb-1 bg-body rounded transparent" style="width: 18rem;"> -->
+          <div class="my-box">
+            <h3 class="card-title text-light">{{result.title}}</h3>
+            <p class="card-text text-light">{{result.note}}</p>
+              <p class="card-time text-light">{{result.time}}</p>
+              <a href="{%url 'edit' result.id %}" class="far fa-edit fa-lg edit_icon"></a>
+             <a href= "{% url 'delete' result.id %}" class="far fa-trash-alt fa-lg delete_icon" ></a>
+          </div>
+      <!-- </div> -->
+    {%endfor%}
+</div>
+{% endblock search %}

@@ -1,0 +1,18 @@
+.deleteit{
+    margin-top: 4.6rem;
+    height: 15rem;
+    width: 32rem;
+    border-radius: 15px;
+    background-color: #c0d9e5;
+}
+.delete{
+    margin-top: 6rem;
+    margin-left: 6rem;
+}
+.cancel{
+  margin-top: 6rem;
+  margin-left: 7rem;
+}
+.delete_text{
+    padding: 33px 0px 6px
+}

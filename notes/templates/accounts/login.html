@@ -1,0 +1,126 @@
+{%extends 'base.html'%}
+{% load socialaccount %}
+
+
+{% block login %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: gray;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    max-width: 800px;
+	margin-top: 3rem;
+    padding: 16px;
+    background-color: rgba(30, 83, 165, 0.38);
+    border-radius: 2rem;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+    border-radius: 3rem;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus ,input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #327ceb;
+  color: white;
+  padding: 16px 20px;
+  /*margin: 8px 0;*/
+  margin-left: 13rem;
+  border-radius: 9rem;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:2 ;
+}
+
+/* Add a blue text color to links */
+a {
+  color: yellow;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.google-btn{
+      width: 50%;
+      border-radius: 9rem;
+      margin-left: 13.2rem;
+
+}
+
+</style>
+</head>
+<body>
+
+
+      {%for msg in messages%}
+      <div class="cont">
+      <div class="alert alert-danger" role="alert">
+        {{msg}}
+      </div>
+      </div>
+      {%endfor%}
+
+<form action="" method="post">
+	{% csrf_token %}
+  <div class="container">
+    <h1 align="center" class="text-light">Login Your Account</h1>
+
+    <hr>
+
+	  <label for="username" class="text-light"><b>Username:</b></label>
+    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+    <label for="password" class="text-light"><b>Password:</b></label>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+    <hr>
+
+    <button type="submit" class="registerbtn">Log In</button>
+
+    <a href="{% provider_login_url 'google' %}" class="btn btn btn-info  btn-block mt-4 google-btn" role="button" aria-pressed="true">Login with Google</a>
+  </div>
+
+  <div class="signin">
+    <p class="text-light">Don't have an account? <a href="{% url 'register'%}">Register Now</a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
+
+{% endblock %}

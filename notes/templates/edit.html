@@ -1,0 +1,28 @@
+<!--{%extends 'base.html'%}-->
+
+<!--{%block edit%}-->
+<!--&lt;!&ndash;<body style="background: linear-gradient(45deg, red, blue);">&ndash;&gt;-->
+<!--<body>-->
+<!--    <div class="container adding" >-->
+<!--            <h4 class="title">Edit Note</h4>-->
+<!--                <form action="" method="POST">-->
+<!--                {%csrf_token%}-->
+<!--                    <div class="form-group">-->
+<!--                        <input type="text" placeholder="Enter title" value="{{ objects.title}}" name="title" class="titlename rounded border border-none">-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <textarea  style="width:480px; height:170px;" type="text" class="notename rounded border border-none textformat" -->
+<!--                         name="note" autofocus >{{ objects.note}}</textarea>-->
+<!--                     </div>-->
+<!--            -->
+<!--                    &lt;!&ndash; <div class="form-group">-->
+<!--                        <input type="text" class="notename rounded border border-none textformat"value="{{ objects.note}}" name="note">-->
+<!--                     </div> &ndash;&gt;-->
+<!--                    <div class="form-group">-->
+<!--                <button type="submit" class="btn btn-success addbtn">Edit</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--    </div>-->
+<!--</body>-->
+<!--{%endblock %}-->
